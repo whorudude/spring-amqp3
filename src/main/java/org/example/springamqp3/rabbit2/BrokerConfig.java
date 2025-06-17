@@ -1,7 +1,5 @@
 package org.example.springamqp3.rabbit2;
 
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.FieldDefaults;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.amqp.support.converter.MessageConverter;
@@ -10,31 +8,29 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@RequiredArgsConstructor
-@FieldDefaults(level = lombok.AccessLevel.PRIVATE)
 public class BrokerConfig {
 
     @Value("${rabbit-config.queue}")
-    String queue;
+    private String queue;
 
     @Value("${rabbit-config.exchange}")
-    String exchange;
+    private String exchange;
 
     @Value("${rabbit-config.routing-key}")
-    String routingKey;
+    private String routingKey;
 
     @Bean
-    Queue queue() {
+    public Queue queue() {
         return new Queue(queue, true);
     }
 
     @Bean
-    DirectExchange exchange() {
+    public DirectExchange exchange() {
         return new DirectExchange(exchange);
     }
 
     @Bean
-    Binding bind(Queue queue, DirectExchange exchange) {
+    public Binding bind(Queue queue, DirectExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(routingKey);
     }
 
