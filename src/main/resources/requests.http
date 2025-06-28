@@ -1,0 +1,24 @@
+### POST request example 1
+POST http://localhost:8081/test/exchange
+Content-Type: application/json
+
+{
+  "sender": "producer",
+  "message": "test1"
+}
+### POST request example 2
+POST http://localhost:8081/test/exchange
+Content-Type: application/json
+
+{
+  "sender": "producer",
+  "message": "test2"
+}
+### POST request example 3
+POST http://localhost:8081/test/exchange
+Content-Type: application/json
+
+{
+  "sender": "producer",
+  "message": "test3"
+}
