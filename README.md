@@ -6,7 +6,7 @@ _src/main/java/org/example/springamqp3/ProducerApplication.java_
 
 ## 3. rulam requesturile pentru a trimite mesajele in rabbitMQ
 _src/main/resources/requests.http_
->Pe localhost:5672 putem gasi randul numit **rabbit-queue**
+>Pe localhost:5672 putem gasi randul numit **rabbit-queue** si observa, cum mesajele au fost ajunge in RabbitMQ
 
-## rulam serviciul ApplicationConsumer pentru a prelua (citi) mesajel trimise
+## 4. rulam serviciul ApplicationConsumer pentru a prelua (citi) mesajel trimise
 _https://github.com/whorudude/spring-amqp-listener_
